@@ -1,6 +1,6 @@
 <?php
 include ('conexion.php');
-$pd=$_GET['prenda'];
+$pd=$_GET['uprenda'];
 $clientes=$_GET['clientes'];
 $sucursales=$_GET['sucursales'];
 echo $pd.$clientes.$sucursales;
