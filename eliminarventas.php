@@ -7,9 +7,10 @@
     <title>Eliminar</title>
 </head>
 <body>
-<?php
-$delta3="DELETE FROM ventas WHERE id =$id3";
-include ('conexion.php');
+<?php 
+include 'conexion.php';
+$id3=$_REQUEST['id'];
+$delta3="DELETE FROM ventas WHERE id_venta=$id3";
 $cone->query($delta3);
 header ('location; listaventas.php');
 ?>

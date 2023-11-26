@@ -37,7 +37,7 @@ $obtener_Pro=$cone->query($sele8);
 </head>
 <body bgcolor="#dee3f3">
 
-    <h3>ROPA</h3>
+    <h3>cliente</h3>
     <form action="guardar_cliente.php" method="get">
         Ingrese el cliente 
         <input type="text" name="cliente">
@@ -91,23 +91,14 @@ $obtener_Pro=$cone->query($sele8);
 	<br>
 	<hr>
 
-	<h3>Talles</h3>
-	<form action="guardarTalle.php" method="get">
-		seleccione el talle
-	<select name="talle">
-			<option value="0">Seleccione el talle</option>
-                    <?php 
-                        while($dato7= $obtener_T->fetch_assoc()) {
-                            echo "<option value='".$dato7["id_talle"]."'>".$dato7["numero_talla"]."</option>";}?>
-		<br>
-		<input type="submit" name=" " value="Guardar">
-	</form>
-	<a href="mostrarTalles.php"><button>Lista</button> </a><br>
-	<hr>
-
 	 <form action="guardarPro.php" method="get">
 	 <h3>Proveedor</h3>
-	 <input type="text" name="proveedor">
+	 proveedor<input type="text" name="proveedor">
+	 <br>
+	 Persona de contacto<input type="text" name="Persona_contacto"><br>
+Correo electronico<input type="text" name=Correo_electronico><br>
+telefono<input type="number" name="telefono"><br>
+direccion<input type="text" name="direccion">
 		<br>
 		<input type="submit" name=" " value="Guardar">
 	</form>
@@ -116,7 +107,7 @@ $obtener_Pro=$cone->query($sele8);
 
 	<h3>ventas</h3>
 	<form action="guardarventas.php" method="get">
-	<input type="text" name="ventas"><br>
+	cantidad de ventas<input type="text" name="ventas"><br>
 	Ingrese el cliente 
 		<select name="cliente">
 			<option value="0">Selecciona el cliente</option>

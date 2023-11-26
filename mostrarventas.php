@@ -9,9 +9,14 @@
 <body>
 
 <?php
-	include('conexion.php');
-	$sel3="SELECT prendas.id_prenda,prendas.marca,prendas.vestimenta, prendas.proveedores,prendas.talles,prendas.precios,prendas.cantidad,ventas.venta,ventas.prenda,ventas.clientes,ventas.sucursales AS Vventas FROM prendas INNER JOIN ventas ON prendas.id_prenda=ventas.prenda";
-	$ejec3=$cone->query($sel3);
+	include 'conexion.php';
+	$sel3="SELECT * FROM ventas";
+	$obtener_V=$cone->query($sel3);
+	if (!$obtener_V) {
+    
+   
+		die("Query failed: " . $cone->error);
+		}
 ?>
 	<table border="3">
 		<tr>
@@ -23,18 +28,17 @@
 			<th>Editar</th>
 		</tr>
 <?php
-	while ($dato3=$ejec3->fetch_assoc()) { ?>
+	while ($dato3=$$obtener_V->fetch_assoc()) { ?>
 		<tr>
-			<td><?php echo $dato3['id_prendas'] ?></td>
-			<td><?php echo $dato3['marcas'] ?></td>
-			<td><?php echo $dato3['vestimentas'] ?></td>
-			<td><?php echo $dato3['proveedores'] ?></td>
-			<td><?php echo $dato3['Vventas'] ?></td>
+			<td><?php echo $dato3['id_venta'] ?></td>
+			<td><?php echo $dato3['prenda'] ?></td>
+			<td><?php echo $dato3['clientes'] ?></td>
+			<td><?php echo $dato3['sucursales'] ?></td> 
 			<td>
-				<a href='eliminarventas.php?id=<?php echo $dato3['id'] ?>'>Eliminar</a>
+				<a href='eliminarventas.php?id=<?php echo $dato3['id_venta'] ?>'>Eliminar</a>
 			</td>
 			<td>
-				<a href='formularioventa.php?id=<?php echo $dato3['id'] ?>'>Editar</a>
+				<a href='formularioventaEdit.php?id=<?php echo $dato3['id_venta'] ?>'>Editar</a>
 			</td>
 		</tr>
 	<?php

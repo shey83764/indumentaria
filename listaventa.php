@@ -25,12 +25,12 @@ while ($fila3=$resu3->fetch_assoc()){
     ?>
     <tr>
        <?php echo $cont3 ?></td>
-       <td><?php echo $fila3['id_ventas']?></td>
+       <td><?php echo $fila3['id_venta']?></td>
        <td><?php echo $fila3['prenda']?></td>
        <td><?php echo $fila3['clientes']?></td>
        <td><?php echo $fila3['sucursales']?></td>
-       <td><a href='formularioventa.php?id=<?php echo $fila3['id']?>'>actualizar</a></td>
-       <td><a href='eliminarventas.php?id=<?php echo $fila3['id']?>'>borrar</a></td>
+       <td><a href='formularioventa.php?id=<?php echo $fila3['id_venta']?>'>actualizar</a></td>
+       <td><a href='eliminarventas.php?id=<?php echo $fila3['id_venta']?>'>borrar</a></td>
     </tr>
 <?php
 }
@@ -38,6 +38,6 @@ while ($fila3=$resu3->fetch_assoc()){
 </table>
 cantidad de registros cargados:<?php echo $cont3 ?>
 <br>
-<a href="formulariventa.php">Cargas registrados</a>
+<a href="formularioventa.php">Cargas registrados</a>
 </body>
 </html>

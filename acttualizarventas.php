@@ -9,8 +9,7 @@
 <body>
     <form action="guardarventas.php" method="get">
 <?php
-$v=$_GET['id_ventas'];
-$prd=$_GET['prendas'];
+$prd=$_GET['prenda'];
 $c=$_GET['clientes'];
 $s=$_GET['sucursales'];
 ?>

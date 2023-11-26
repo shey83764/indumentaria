@@ -13,10 +13,8 @@
     $obtener_V="SELECT * FROM ventas WHERE id_venta=$id3";
     $resul3=$cone->query($obtener_V);
     $fila3=$resul3->fetch_assoc();
-    var_dump($fila3);
-    header('modificar_ventas.php');
     ?>
-    <form action="guardarventas.php" method="get">
+    <form action="modificar_ventas.php" method="get">
     <h3>prenda</h3>
     <input type="text" name="uprenda" value="<?php echo $fila3['prenda']?>"/>
     <h3>cliente</h3>
@@ -24,6 +22,7 @@
     <h3>sucursales</h3>
     <input type="text" name="usucr" value="<?php echo $fila3['sucursales']?>"/>
    <br>
+   <input type="hidden" name="id_venta" value="<?php echo $fila3["id_venta"]?>">
     <input type="submit" value="Actualizar"/>
 </form>
 </body>

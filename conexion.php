@@ -1,3 +1,3 @@
 <?php
-$cone=new mysqli("localhost" , "root" , "" , "indumentaria");
+$cone=new mysqli("localhost" , "root" , "" , "indumentaria2");
 ?>
